@@ -1,0 +1,785 @@
+html{
+  background-color:black;
+}
+body {
+  margin: 0;
+  background-color: black;
+  color: black;
+  height: 500px;
+  animation: fadeIn;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  /* prevents horizontal scroll*/
+  overflow-x: hidden;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+@keyframes fadeIn {
+  from{
+    opacity:0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-family: big-caslon-fb, serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  letter-spacing: 4px;
+}
+
+h2 {
+  text-align: center;
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+h3 {
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+}
+
+h4 {
+  text-align: center;
+  line-height: 2px;
+  font-family: futura-pt, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 2px;
+}
+
+.crop {
+  width: 736px;
+  height: 865px;
+  overflow: hidden;
+  display: none;
+}
+
+.crop img {
+  margin: 0;
+}
+
+.nocrop .slide2 {
+  width: 100%;
+  display: block;
+}
+
+.header {
+  text-align: center;
+}
+
+.MasonsLogo {
+  position: relative;
+  height: 127.69px;
+  width: 300px;
+  bottom: 56vh;
+  left: 53vw;
+}
+
+.IllumiLogo {
+  position: relative;
+  bottom: 85vh;
+  right: 11vw;
+}
+
+.x {
+  background: black;
+  height: 100px;
+  position: relative;
+  bottom: 70vh;
+  left: 49vw;
+  width: 15px;
+  transform: rotate(40deg);
+}
+
+.mobilemasons {
+  display: none;
+}
+
+.mobilex {
+  display: none;
+}
+
+.mobileilluminati {
+  display: none;
+}
+
+.x:after {
+  background: black;
+  content: "";
+  height: 15px;
+  left: -40px;
+  position: absolute;
+  top: 40px;
+  width: 100px;
+  transform: rotate(10deg);
+}
+
+.links {
+  width: 50vw;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  bottom: 80vh;
+  left: 30vw;
+  font-size: 20px;
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: bold;
+  display:block;
+}
+
+.links li {
+  display: inline;
+  padding: 10px 40px 10px 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #415f2d;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+.ordercontainer {
+  position: relative;
+  bottom: 55vh;
+  background-color: rgb(107, 24, 128);
+  width: 100vw;
+  height: 5vh;
+}
+
+.ordertext {
+  position: relative;
+  top: 1vh;
+}
+
+.domestic{
+  font-size: 20px;
+}
+
+.container {
+  position: relative;
+  bottom: 55vh;
+  background-image: linear-gradient(rgb(222, 222, 222), white);
+  width: 100vw;
+  height: 200vh;
+}
+
+.filterclothes {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 50px 0px 0px 0px;
+  text-transform: uppercase;
+  font-family: big-caslon-fb, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+}
+
+.filterclothes:hover {
+  cursor: pointer;
+}
+
+.filterclothes li {
+  display: inline;
+  padding: 0px 20px 0px 20px;
+}
+
+/* referenced code from here: https://tobiasahlin.com/blog/css-trick-animating-link-underlines/ */
+/*NOTES ON THE FEAUTRE*/
+/*select*/
+.filterclothes>.underlineThis {
+  position: relative;
+  color: black;
+  text-decoration: none;
+}
+
+.filterclothes>.underlineThis:hover {
+  color: black;
+  /* my change*/
+  cursor: pointer;
+  /*my change*/
+}
+/* The before feature: puts some styling before the content */
+.filterclothes>.underlineThis:before {
+  /*content is empty*/
+  content: "";
+  position: absolute;
+  width: 100%;
+  /* mychanges */
+  height: 15px;
+  top: 40px;
+  /* mychanges */
+  bottom: 0;
+  left: 3px;
+  background-color: black;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.filterclothes>.underlineThis:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.underlineThis:hover:after,
+.underlineThis:focus:after,
+.underlineThis:active:after {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+
+/* referenced code from here: https://tobiasahlin.com/blog/css-trick-animating-link-underlines/ */
+.newarrivals {
+  position: relative;
+  padding: 110px 0px 0px 35px;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  /*grid-template-columns: 400px 400px 400px 400px;
+  grid-template-rows: auto;
+  grid-row-gap: 30px;*/
+}
+
+.floatOutanimation{
+  animation-name: floatOut;
+  animation-duration: 1.75s;
+}
+
+@keyframes floatOut {
+  from{
+    padding: 0px 0px 60px 0px;
+    opacity:1;
+  }
+  to{
+    padding: 80px 0px 60px 0px;
+    opacity:0;
+  }
+}
+
+.floatInanimation{
+  animation-name:floatIn;
+  animation-duration: 2s;
+  transition-timing-function: ease-in;
+}
+
+@keyframes floatIn{
+  from{
+    padding: 80px 0px 60px 0px;
+    opacity:0;
+  }
+  to{
+    padding: 0px 0px 60px 0px;
+    opacity:1;
+  }
+}
+
+.clothing{
+  position:relative;
+  display: inline-block;
+  width: 400px;
+  padding: 0px 0px 60px 0px;
+  height: auto;
+}
+
+.clothing .mens img{
+  z-index: 1;
+}
+
+.clothing .womens img{
+  z-index: 1;
+}
+
+.soclothes{
+  cursor: pointer;
+}
+
+.newarrivals img {
+  position: relative;
+  left: calc(50% - 191.25px);
+}
+
+.description {
+  color: black;
+  font-family: futura-pt, sans-serif;
+  font-weight: 300;
+  line-height: 20px;
+  font-style: normal;
+  font-size: 16px;
+  width: auto;
+  height: auto;
+}
+
+.colorselection {
+  position: relative;
+  left: calc(50% - 45px);
+  display: grid;
+  grid-template-columns: 30px 30px 30px;
+  grid-template-rows: 30px;
+}
+
+.circle{
+  position:absolute;
+  top: 250px;
+  left: 140px;
+  height: 110px;
+  width: 110px;
+  background-color: rgb(255, 194, 38);
+  border-radius: 100%;
+  z-index: 2;
+  display: none;
+}
+
+.circleso{
+  color: black;
+  padding-top: 20px;
+}
+.color {
+
+}
+
+.colorselection .twocolors {
+  left: calc(50% - 30px);
+  grid-template-columns: 30px 30px;
+}
+
+.color1 {
+  background-color: rgb(111, 25, 25);
+}
+
+.color2 {
+  background-color: rgb(159, 189, 58);
+}
+
+.color3 {
+  background-color: black;
+}
+
+.color4 {
+  background-color: rgb(255, 130, 0);
+}
+
+.color5 {
+  background-color: rgb(21, 37, 187);
+}
+
+.color6 {
+  background-color: black;
+}
+
+.color7 {
+  background-color: white;
+}
+
+
+
+
+.footer{
+  position: relative;
+  bottom: 104.3vh;
+}
+
+.footerimg{
+  position:relative;
+  top: 39vh;
+  left:60vw;
+}
+
+span{
+  text-transform: uppercase;
+
+}
+.background{
+
+  background-color: #415f2d;
+  width: 100vw;
+  height: 37vh;
+
+}
+
+
+.line{
+  position: absolute;
+  top: 51.5vh;
+  background-color: white;
+  width:100vw;
+  height: 2px;
+}
+
+#line2{
+  top: 50.5vh;
+}
+
+#address{
+  position: relative;
+  top: 120px;
+  font-family: big-caslon-fb, serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+.transparentheader {
+  position: fixed;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 10vh;
+  background-color: rgba(255, 255, 255, 0.77);
+  display: none;
+  z-index: 1;
+}
+
+.hamburger {
+  position: absolute;
+  top: 3vh;
+  left: 3vw;
+  display: inline-block;
+  cursor: pointer;
+  display: none;
+}
+
+.bar {
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  background-color: black;
+  cursor: pointer;
+  display: none;
+}
+
+.mobilemenu {
+  text-align: center;
+  position: relative;
+  top: 57px;
+  height: 45vh;
+  width: 100vw;
+  background-color: #415f2d;
+  list-style: none;
+  display: none;
+}
+
+.mobilemenu a {
+  color: white;
+  padding: 12px 0px;
+  padding-right: 30px;
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: bold;
+display: none;
+}
+
+ .exit{
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+background-color: #415f2d;
+display: none;
+}
+
+.menulink{
+  display: none;
+}
+/*@media only screen and (min-width : 375px) and (max-width : 667px) {
+  .clothing{
+    right: 35px;
+  }
+  .clothing img{
+    height: 465px;
+    width: 352.5px;
+  }
+  .crop {
+    display: block;
+    width: 375px;
+  }
+  .transparentheader {
+    background-color: rgba(255, 255, 255, 0.77);
+    position: fixed;
+    display: block;
+    height: 12vh;
+
+  }
+
+  .MasonsLogo {
+    visibility: hidden;
+
+  }
+
+  .IllumiLogo {
+    visibility: hidden;
+  }
+
+  .x {
+    visibility: hidden;
+  }
+
+  .mobilemasons {
+    position: absolute;
+    display: block;
+    top: 2vh;
+    left: 50vw;
+    transform: rotate(-2deg);
+  }
+
+  .mobileilluminati {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 20vw;
+  }
+  .nocrop .slide2 {
+    display: none;
+  }
+
+  .ordercontainer {
+    bottom: 69vh;
+    height: 8vh;
+  }
+  .domestic{
+    font-size: 15px;
+  }
+
+  .container {
+    bottom: 69vh;
+    height:530vh;
+  }
+
+  .filterclothes {
+    font-size: 14.5px;
+  }
+  .links{
+    display: none;
+  }
+
+  .filterclothes>.underlineThis:before {
+    /* mychanges */
+  /*  height: 8px;
+    top: 25px;
+    /* mychanges *//*
+  }
+
+  .newarrivals {
+
+  }
+  .footer{
+    position: relative;
+    bottom: 73.3vh;
+  }
+
+  .footerimg{
+    display:none;
+  }
+
+  span{
+    text-transform: uppercase;
+
+  }
+  .background{
+
+    background-color:/* #415f2d;*//*
+    width: 100vw;
+    height: 37vh;
+
+  }
+
+
+  .line{
+    top: 5.5vh;
+  }
+
+  #line2{
+    top: 3.5vh;
+  }
+
+  #address{
+    top: 60px;
+    font-size: 20px;
+    line-height: 40px;
+
+  }
+} */
+
+@media only screen and (min-width : 414px) and (max-width : 736px) {
+  .footerimg{
+    display:none;
+  }
+ .clothing{
+   right: 30px;
+ }
+  .MasonsLogo {
+    visibility: hidden;
+  }
+
+  .IllumiLogo {
+    visibility: hidden;
+  }
+
+  .x {
+    visibility: hidden;
+  }
+
+  .mobilemasons {
+    position: absolute;
+    display: block;
+    top: 2vh;
+    left: 50vw;
+    transform: rotate(-2deg);
+  }
+
+  .mobileilluminati {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 20vw;
+  }
+
+  .crop {
+    display: block;
+    width: 414px;
+  }
+
+  .nocrop .slide2 {
+    display: none;
+  }
+
+  .ordercontainer {
+    bottom: 69vh;
+    height: 8vh;
+  }
+
+  .domestic{
+    font-size: 17px;
+  }
+
+  .container {
+    bottom: 69vh;
+    height:500vh;
+  }
+
+  .filterclothes {
+    font-size: 16px;
+  }
+  .links{
+    display: none;
+  }
+
+  .filterclothes>.underlineThis:before {
+    /* mychanges */
+    height: 8px;
+    top: 25px;
+    /* mychanges */
+  }
+
+  .newarrivals {
+
+  }
+
+  .footer{
+    position: relative;
+    bottom: 74.3vh;
+  }
+
+  #address{
+    top: 80px;
+    font-size: 24px;
+    line-height: 40px;
+
+  }
+  .transparentheader {
+    background-color: rgba(255, 255, 255, 0.77);
+    position: fixed;
+    display: block;
+    height: 10vh;
+  }
+
+  .footer{
+    position: relative;
+    bottom: 73.3vh;
+  }
+
+  .footerimg{
+    display:none;
+  }
+
+  span{
+    text-transform: uppercase;
+
+  }
+  .background{
+
+    background-color: #415f2d;
+    width: 100vw;
+    height: 37vh;
+
+  }
+
+
+  .line{
+    top: 5.5vh;
+  }
+
+  #line2{
+    top: 3.5vh;
+  }
+
+  #address{
+    line-height: 40px;
+    padding: 0px 10px 0px 10px;
+
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 3vh;
+    left: 3vw;
+    display: inline-block;
+    cursor: pointer;
+    display: block;
+  }
+
+  .bar {
+    width: 35px;
+    height: 5px;
+    margin: 6px 0;
+    background-color: black;
+    cursor: pointer;
+    display: block;
+  }
+
+}
